@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const imageBasePath = '../assets/images/'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faSyncAlt, faFish, faLeaf, faThList, faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 const SidebarContainer = styled.div`
   width: 250px;
   background-color: white;
   padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const SidebarItemContainer = styled.div`
@@ -15,29 +16,39 @@ const SidebarItemContainer = styled.div`
   margin: 10px 0;
   font-size: 18px;
   cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #f0f0f0;
+    color: darkorange;
+  }
 `;
 
-const SidebarIcon = styled.img`
-  width: 24px; // Ajusta el tamaño del ícono según sea necesario
-  height: 24px;
+const SidebarIcon = styled(FontAwesomeIcon)`
   margin-right: 10px;
+  transition: transform 0.3s;
+
+  ${SidebarItemContainer}:hover & {
+    transform: scale(1.2);
+  }
 `;
 
-const SidebarItem = ({ iconSrc, children }) => (
+const SidebarItem = ({ icon, children }) => (
   <SidebarItemContainer>
-    <SidebarIcon src={iconSrc} alt="Icon" />
+    <SidebarIcon icon={icon} />
     {children}
   </SidebarItemContainer>
 );
 
 const Sidebar = () => (
   <SidebarContainer>
-    <SidebarItem iconSrc={`${imageBasePath}icon-principal.png`}>Principal</SidebarItem>
-    <SidebarItem iconSrc={`${imageBasePath}icon-roles-invertidos.png`}>Roles Invertidos</SidebarItem>
-    <SidebarItem iconSrc={`${imageBasePath}icon-rollos-filadelfia.png`}>Rollos de Filadelfia</SidebarItem>
-    <SidebarItem iconSrc={`${imageBasePath}icon-rollos-clasicos.png`}>Rollos Clásicos</SidebarItem>
-    <SidebarItem iconSrc={`${imageBasePath}icon-maxi.png`}>Maki</SidebarItem>
-    <SidebarItem iconSrc={`${imageBasePath}icon-nigiri.png`}>Nigiri</SidebarItem>
+    <SidebarItem icon={faHome}>Principal</SidebarItem>
+    <SidebarItem icon={faSyncAlt}>Roles Invertidos</SidebarItem>
+    <SidebarItem icon={faFish}>Rollos de Filadelfia</SidebarItem>
+    <SidebarItem icon={faLeaf}>Rollos Clásicos</SidebarItem>
+    <SidebarItem icon={faThList}>Maki</SidebarItem>
+    <SidebarItem icon={faUtensils}>Nigiri</SidebarItem>
   </SidebarContainer>
 );
 

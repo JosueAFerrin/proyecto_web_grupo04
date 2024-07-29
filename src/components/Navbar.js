@@ -7,12 +7,21 @@ const NavbarContainer = styled.div`
   align-items: center;
   padding: 10px 20px;
   background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 `;
 
 const Logo = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: orange;
+  transition: color 0.3s;
+
+  &:hover {
+    color: darkorange;
+  }
 `;
 
 const Menu = styled.div`
@@ -23,6 +32,13 @@ const Menu = styled.div`
 const MenuItem = styled.div`
   font-size: 18px;
   cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  color: black;
+
+  &:hover {
+    color: darkorange;
+    transform: scale(1.1);
+  }
 `;
 
 const Navbar = () => (

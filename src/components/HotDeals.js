@@ -1,5 +1,3 @@
-// src/components/HotDeals.js
-
 import React from 'react';
 import styled from 'styled-components';
 import MenuItem from './MenuItem';
@@ -18,16 +16,42 @@ const HotDealsContainer = styled.div`
 `;
 
 const deals = [
-  { title: 'Rollos de Salmón', image: SalmonRoll },
-  { title: 'Rollos Tempurizados', image: TempuraRoll },
-  { title: 'Rollos con Caviar', image: CaviarRoll },
-  { title: 'Rollos veganos', image: VeganRoll },
+  {
+    title: 'Rollos de Salmón',
+    image: SalmonRoll,
+    price: '$12.99',
+    description: 'Deliciosos rollos de salmón fresco con aguacate y pepino.'
+  },
+  {
+    title: 'Rollos Tempurizados',
+    image: TempuraRoll,
+    price: '$10.99',
+    description: 'Rollos crujientes tempurizados con camarones y vegetales.'
+  },
+  {
+    title: 'Rollos con Caviar',
+    image: CaviarRoll,
+    price: '$15.99',
+    description: 'Exquisitos rollos con caviar y una mezcla de sabores únicos.'
+  },
+  {
+    title: 'Rollos veganos',
+    image: VeganRoll,
+    price: '$9.99',
+    description: 'Rollos veganos con una combinación de vegetales frescos.'
+  },
 ];
 
 const HotDeals = () => (
   <HotDealsContainer>
     {deals.map((deal, index) => (
-      <MenuItem key={index} title={deal.title} image={deal.image} />
+      <MenuItem
+        key={index}
+        title={deal.title}
+        image={deal.image}
+        price={deal.price}
+        description={deal.description}
+      />
     ))}
   </HotDealsContainer>
 );
