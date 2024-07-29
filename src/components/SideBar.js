@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faSyncAlt, faFish, faLeaf, faThList, faUtensils } from '@fortawesome/free-solid-svg-icons';
+import FloatingChatBot from './FloatingChatBot';
 
 const SidebarContainer = styled.div`
   width: 250px;
@@ -13,10 +14,11 @@ const SidebarContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `;
 
-const SidebarItems = styled.div``;
+const SidebarItems = styled.div`
+  flex: 1;
+`;
 
 const SidebarItemContainer = styled.div`
   display: flex;
@@ -60,6 +62,7 @@ const Sidebar = () => (
       <SidebarItem icon={faThList}>Maki</SidebarItem>
       <SidebarItem icon={faUtensils}>Nigiri</SidebarItem>
     </SidebarItems>
+    <FloatingChatBot />
   </SidebarContainer>
 );
 

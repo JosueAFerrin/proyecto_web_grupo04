@@ -1,3 +1,5 @@
+// src/components/HotDeals.js
+
 import React from 'react';
 import styled from 'styled-components';
 import MenuItem from './MenuItem';
@@ -13,6 +15,8 @@ const HotDealsContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 80px; // Ajusta este valor según la altura del Header
+  padding-bottom: 60px; // Para evitar que los elementos toquen el footer
 `;
 
 const deals = [
@@ -40,6 +44,7 @@ const deals = [
     price: '$9.99',
     description: 'Rollos veganos con una combinación de vegetales frescos.'
   },
+  // Puedes agregar más elementos aquí
 ];
 
 const HotDeals = () => (

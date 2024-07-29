@@ -6,7 +6,6 @@ import Navbar from '../components/Navbar';
 import SideBar from '../components/SideBar';
 import Banner from '../components/Banner';
 import HotDeals from '../components/HotDeals';
-import FloatingChatBot from '../components/FloatingChatBot';
 import Header from '../components/Header';
 
 const HomeContainer = styled.div`
@@ -16,11 +15,11 @@ const HomeContainer = styled.div`
 const Content = styled.div`
   flex: 1;
   padding: 20px;
+  margin-top: 60px; // Ajusta según la altura de tu Navbar
 `;
 
 const Home = () => (
   <div>
-    <Header />
     <Navbar />
     <HomeContainer>
       <SideBar />
@@ -29,7 +28,7 @@ const Home = () => (
         <HotDeals />
       </Content>
     </HomeContainer>
-    <FloatingChatBot />
+    <Header />
   </div>
 );
 

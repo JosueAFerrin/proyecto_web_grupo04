@@ -5,12 +5,10 @@ import styled from 'styled-components';
 import { FaRobot } from 'react-icons/fa';
 
 const ChatBotContainer = styled.div`
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const RobotButton = styled.button`
@@ -34,20 +32,30 @@ const RobotButton = styled.button`
 
 const ChatWindow = styled.div`
   display: ${props => (props.show ? 'block' : 'none')};
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  width: 300px;
-  max-height: 400px;
+  width: 250px;
+  max-height: 200px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 15px;
   overflow-y: auto;
+  position: relative;
+  margin-top: 10px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }
 `;
 
 const ChatHeader = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
@@ -57,7 +65,6 @@ const ChatHeader = styled.div`
 const ChatBody = styled.div`
   font-size: 14px;
   color: #555;
-  margin-bottom: 10px;
 `;
 
 const FloatingChatBot = () => {
