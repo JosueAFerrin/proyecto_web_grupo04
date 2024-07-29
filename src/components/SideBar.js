@@ -1,3 +1,5 @@
+// src/components/SideBar.js
+
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +10,13 @@ const SidebarContainer = styled.div`
   background-color: white;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
+
+const SidebarItems = styled.div``;
 
 const SidebarItemContainer = styled.div`
   display: flex;
@@ -17,11 +25,12 @@ const SidebarItemContainer = styled.div`
   font-size: 18px;
   cursor: pointer;
   padding: 10px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
   &:hover {
     background-color: #f0f0f0;
     color: darkorange;
+    transform: scale(1.1);
   }
 `;
 
@@ -43,12 +52,14 @@ const SidebarItem = ({ icon, children }) => (
 
 const Sidebar = () => (
   <SidebarContainer>
-    <SidebarItem icon={faHome}>Principal</SidebarItem>
-    <SidebarItem icon={faSyncAlt}>Roles Invertidos</SidebarItem>
-    <SidebarItem icon={faFish}>Rollos de Filadelfia</SidebarItem>
-    <SidebarItem icon={faLeaf}>Rollos Clásicos</SidebarItem>
-    <SidebarItem icon={faThList}>Maki</SidebarItem>
-    <SidebarItem icon={faUtensils}>Nigiri</SidebarItem>
+    <SidebarItems>
+      <SidebarItem icon={faHome}>Principal</SidebarItem>
+      <SidebarItem icon={faSyncAlt}>Roles Invertidos</SidebarItem>
+      <SidebarItem icon={faFish}>Rollos de Filadelfia</SidebarItem>
+      <SidebarItem icon={faLeaf}>Rollos Clásicos</SidebarItem>
+      <SidebarItem icon={faThList}>Maki</SidebarItem>
+      <SidebarItem icon={faUtensils}>Nigiri</SidebarItem>
+    </SidebarItems>
   </SidebarContainer>
 );
 
